@@ -57,6 +57,18 @@ jobs:
         run: |
           choco install tesseract --no-progress -y
           ./setup.ps1 -NoWinget
+      - name: setup.ps1 under Windows PowerShell 5.1, in a fresh copy, as the README says
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          git worktree add ..\fresh HEAD || exit /b 1
+          cd ..\fresh || exit /b 1
+          powershell -Command "$PSVersionTable.PSVersion.ToString()"
+          powershell -ExecutionPolicy Bypass -File .\setup.ps1 -NoWinget || exit /b 1
+          call redact.cmd sample p.png --book 64317 --seed 2 || exit /b 1
+          call redact.cmd p.png -o r.png --term the --key k.json || exit /b 1
+          call unredact.cmd r.png || exit /b 1
+          call unredact.cmd score r.guess.json k.json || exit /b 1
       - name: demo page through both tools (Linux)
         if: runner.os == 'Linux'
         run: |
