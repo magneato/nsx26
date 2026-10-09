@@ -1,0 +1,16 @@
+# Built or downloaded by setup.sh / setup.ps1: never committed
+.venv/
+data/
+__pycache__/
+*.pyc
+# Benchmark scratch: thousands of page images; results.json, cases.json and calibration.json are kept
+results/pages/
+results/calibration/
+results/evaluate.log
+# Release bundles from release.sh
+dist/
+# Jekyll local preview
+docs/_site/
+docs/.jekyll-cache/
+.DS_Store
+Thumbs.db

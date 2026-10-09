@@ -1,0 +1,455 @@
+{
+  "tool": "nsx26 unredact 0.1.0",
+  "codename": "Black Mirror",
+  "size": [
+    1275,
+    1650
+  ],
+  "font": {
+    "font": "LiberationSerif-Regular",
+    "size_px": 23.888,
+    "ocr_offset_px": -0.992,
+    "median_residual_px": 0.502,
+    "words_used": 457,
+    "ranking": [
+      {
+        "font": "LiberationSerif-Regular",
+        "size_px": 23.89,
+        "median_residual_px": 0.502
+      },
+      {
+        "font": "FreeSerif",
+        "size_px": 24.52,
+        "median_residual_px": 0.738
+      },
+      {
+        "font": "DejaVuSerif",
+        "size_px": 18.76,
+        "median_residual_px": 1.112
+      },
+      {
+        "font": "DejaVuSans",
+        "size_px": 19.1,
+        "median_residual_px": 1.481
+      },
+      {
+        "font": "FreeSans",
+        "size_px": 21.91,
+        "median_residual_px": 1.549
+      }
+    ]
+  },
+  "boxes": [
+    {
+      "x": 217,
+      "y": 438,
+      "w": 52,
+      "h": 28,
+      "fill": "solid",
+      "left": [
+        "been",
+        "done",
+        "to"
+      ],
+      "right": [
+        "in",
+        "that",
+        "den"
+      ],
+      "starts_sentence": false,
+      "texts_that_fit": 11099,
+      "guesses": [
+        {
+          "text": "merit",
+          "score": -13.141,
+          "p_model": 0.1346,
+          "ink_px": 50.4
+        },
+        {
+          "text": "them",
+          "score": -13.217,
+          "p_model": 0.1247,
+          "ink_px": 47.78
+        },
+        {
+          "text": "place",
+          "score": -13.944,
+          "p_model": 0.0602,
+          "ink_px": 50.38
+        },
+        {
+          "text": "serve",
+          "score": -14.059,
+          "p_model": 0.0537,
+          "ink_px": 50.4
+        },
+        {
+          "text": "assist",
+          "score": -14.087,
+          "p_model": 0.0522,
+          "ink_px": 51.77
+        },
+        {
+          "text": "put it",
+          "score": -14.107,
+          "p_model": 0.0512,
+          "ink_px": 49.78
+        },
+        {
+          "text": "stand",
+          "score": -14.265,
+          "p_model": 0.0437,
+          "ink_px": 50.43
+        },
+        {
+          "text": "sleep",
+          "score": -14.394,
+          "p_model": 0.0384,
+          "ink_px": 49.09
+        },
+        {
+          "text": "make",
+          "score": -14.577,
+          "p_model": 0.032,
+          "ink_px": 51.74
+        },
+        {
+          "text": "bring",
+          "score": -14.713,
+          "p_model": 0.0279,
+          "ink_px": 50.43
+        }
+      ]
+    },
+    {
+      "x": 516,
+      "y": 630,
+      "w": 37,
+      "h": 28,
+      "fill": "solid",
+      "left": [
+        "light",
+        "from",
+        "its"
+      ],
+      "right": [
+        "lanterns"
+      ],
+      "starts_sentence": false,
+      "texts_that_fit": 2575,
+      "guesses": [
+        {
+          "text": "two",
+          "score": -15.659,
+          "p_model": 0.7398,
+          "ink_px": 35.83
+        },
+        {
+          "text": "odd",
+          "score": -18.742,
+          "p_model": 0.0339,
+          "ink_px": 35.83
+        },
+        {
+          "text": "cell",
+          "score": -19.019,
+          "p_model": 0.0257,
+          "ink_px": 34.47
+        },
+        {
+          "text": "cart",
+          "score": -19.237,
+          "p_model": 0.0207,
+          "ink_px": 35.81
+        },
+        {
+          "text": "aim",
+          "score": -19.41,
+          "p_model": 0.0174,
+          "ink_px": 35.83
+        },
+        {
+          "text": "and",
+          "score": -19.435,
+          "p_model": 0.017,
+          "ink_px": 34.49
+        },
+        {
+          "text": "real",
+          "score": -19.521,
+          "p_model": 0.0156,
+          "ink_px": 35.81
+        },
+        {
+          "text": "rest",
+          "score": -19.572,
+          "p_model": 0.0148,
+          "ink_px": 34.49
+        },
+        {
+          "text": "few",
+          "score": -19.649,
+          "p_model": 0.0137,
+          "ink_px": 35.81
+        },
+        {
+          "text": "soft",
+          "score": -20.64,
+          "p_model": 0.0051,
+          "ink_px": 35.83
+        }
+      ]
+    },
+    {
+      "x": 774,
+      "y": 1241,
+      "w": 36,
+      "h": 28,
+      "fill": "solid",
+      "left": [
+        "have",
+        "someone",
+        "to"
+      ],
+      "right": [
+        "to",
+        "for",
+        "my"
+      ],
+      "starts_sentence": false,
+      "texts_that_fit": 2160,
+      "guesses": [
+        {
+          "text": "call",
+          "score": -15.617,
+          "p_model": 0.6089,
+          "ink_px": 34.47
+        },
+        {
+          "text": "fire",
+          "score": -16.941,
+          "p_model": 0.162,
+          "ink_px": 33.16
+        },
+        {
+          "text": "pay",
+          "score": -18.599,
+          "p_model": 0.0309,
+          "ink_px": 34.49
+        },
+        {
+          "text": "rise",
+          "score": -18.652,
+          "p_model": 0.0293,
+          "ink_px": 34.49
+        },
+        {
+          "text": "add",
+          "score": -18.792,
+          "p_model": 0.0254,
+          "ink_px": 34.49
+        },
+        {
+          "text": "talk",
+          "score": -18.871,
+          "p_model": 0.0235,
+          "ink_px": 35.83
+        },
+        {
+          "text": "say",
+          "score": -19.101,
+          "p_model": 0.0187,
+          "ink_px": 31.84
+        },
+        {
+          "text": "you",
+          "score": -19.114,
+          "p_model": 0.0184,
+          "ink_px": 35.83
+        },
+        {
+          "text": "and",
+          "score": -19.852,
+          "p_model": 0.0088,
+          "ink_px": 34.49
+        },
+        {
+          "text": "this",
+          "score": -20.082,
+          "p_model": 0.007,
+          "ink_px": 34.52
+        }
+      ]
+    },
+    {
+      "x": 687,
+      "y": 1276,
+      "w": 41,
+      "h": 28,
+      "fill": "solid",
+      "left": [
+        "say",
+        "to",
+        "this"
+      ],
+      "right": [
+        "little",
+        "woman",
+        "to-night"
+      ],
+      "starts_sentence": false,
+      "texts_that_fit": 3214,
+      "guesses": [
+        {
+          "text": "new",
+          "score": -20.512,
+          "p_model": 0.1554,
+          "ink_px": 39.8
+        },
+        {
+          "text": "be a",
+          "score": -20.619,
+          "p_model": 0.1396,
+          "ink_px": 39.13
+        },
+        {
+          "text": "here",
+          "score": -20.902,
+          "p_model": 0.1052,
+          "ink_px": 41.11
+        },
+        {
+          "text": "said",
+          "score": -21.323,
+          "p_model": 0.0691,
+          "ink_px": 38.48
+        },
+        {
+          "text": "was",
+          "score": -21.545,
+          "p_model": 0.0553,
+          "ink_px": 37.15
+        },
+        {
+          "text": "neat",
+          "score": -21.595,
+          "p_model": 0.0526,
+          "ink_px": 39.8
+        },
+        {
+          "text": "nice",
+          "score": -22.17,
+          "p_model": 0.0296,
+          "ink_px": 39.8
+        },
+        {
+          "text": "man",
+          "score": -22.267,
+          "p_model": 0.0269,
+          "ink_px": 41.14
+        },
+        {
+          "text": "sum",
+          "score": -22.372,
+          "p_model": 0.0242,
+          "ink_px": 39.82
+        },
+        {
+          "text": "first",
+          "score": -22.379,
+          "p_model": 0.024,
+          "ink_px": 38.48
+        }
+      ]
+    },
+    {
+      "x": 1039,
+      "y": 1276,
+      "w": 55,
+      "h": 28,
+      "fill": "solid",
+      "left": [
+        "to-night",
+        "when",
+        "she"
+      ],
+      "right": [
+        "me",
+        "at",
+        "the"
+      ],
+      "starts_sentence": false,
+      "texts_that_fit": 12400,
+      "guesses": [
+        {
+          "text": "heard",
+          "score": -12.599,
+          "p_model": 0.4495,
+          "ink_px": 53.06
+        },
+        {
+          "text": "loved",
+          "score": -13.64,
+          "p_model": 0.1587,
+          "ink_px": 53.08
+        },
+        {
+          "text": "woke",
+          "score": -13.917,
+          "p_model": 0.1203,
+          "ink_px": 51.74
+        },
+        {
+          "text": "asked",
+          "score": -14.129,
+          "p_model": 0.0973,
+          "ink_px": 54.39
+        },
+        {
+          "text": "made",
+          "score": -14.466,
+          "p_model": 0.0695,
+          "ink_px": 51.74
+        },
+        {
+          "text": "drove",
+          "score": -15.621,
+          "p_model": 0.0219,
+          "ink_px": 54.39
+        },
+        {
+          "text": "knew",
+          "score": -15.913,
+          "p_model": 0.0163,
+          "ink_px": 51.74
+        },
+        {
+          "text": "wake",
+          "score": -16.224,
+          "p_model": 0.012,
+          "ink_px": 50.4
+        },
+        {
+          "text": "meets",
+          "score": -16.459,
+          "p_model": 0.0095,
+          "ink_px": 55.73
+        },
+        {
+          "text": "wrote",
+          "score": -16.66,
+          "p_model": 0.0077,
+          "ink_px": 54.39
+        }
+      ]
+    }
+  ],
+  "note": "Ranked GUESSES. A box keeps its width, not its text; the right answer may be ranked low or be missing from the vocabulary.",
+  "seconds": 10.3,
+  "image": "words.png",
+  "model": {
+    "file": "wordmodel.npz",
+    "sha256": "f3373479af5d7157e301819f54191715ebb2fe2a9687d7215655668a006503f2",
+    "source": "corpus/books.tsv train split: 1342, 158, 84, 98, 1400, 2701, 345, 768, 1260, 145, 174, 76, 205, 3300, 1232, 2600, 1184, 36, 35"
+  }
+}

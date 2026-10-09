@@ -1,0 +1,42 @@
+$ ./redact.sh sample page.png --book 1661 --seed 3 --names names.txt
+page.png: 616 words of The Adventures of Sherlock Holmes in LiberationSerif-Regular 24px (layout: page.layout.json)
+
+$ ./redact.sh page.png -o words.png --term talk --term dear --term side --term death --term meets --key words.key.json
+words.png: 5 box(es), fill black, sha256 cc514749750df248
+
+$ ./unredact.sh words.png
+font LiberationSerif-Regular 23.89px (median residual 0.50px over 457 words)
+  #1 52px solid  been done to [merit (0.13), them (0.12), place (0.06), serve (0.05), assist (0.05)] in that den
+  #2 37px solid  light from its [two (0.74), odd (0.03), cell (0.03), cart (0.02), aim (0.02)] lanterns
+  #3 36px solid  have someone to [call (0.61), fire (0.16), pay (0.03), rise (0.03), add (0.03)] to for my
+  #4 41px solid  say to this [new (0.16), be a (0.14), here (0.11), said (0.07), was (0.06)] little woman to-night
+  #5 55px solid  to-night when she [heard (0.45), loved (0.16), woke (0.12), asked (0.10), made (0.07)] me at the
+5 box(es); guesses -> words.guess.json, picture -> words.guess.png
+
+$ ./unredact.sh score words.guess.json words.key.json
+  found  rank  6  talk
+  found  rank  -  dear
+  found  rank  -  side
+  found  rank  -  death
+  found  rank  9  meets
+5 boxes: 5 found, first guess right 0, in top five 0, 0 false box(es)
+
+$ ./redact.sh page.png -o names.png --term Hiyodori --term Hoshizora --term Kasumi --term Kodama --key names.key.json
+names.png: 5 box(es), fill black, sha256 05c4914a58cb6ce4
+
+$ ./unredact.sh names.png --names names.txt --names-only
+font LiberationSerif-Regular 23.89px (median residual 0.51px over 457 words)
+  #1 99px solid  and the rascally [Michishio (0.13), Yamabiko (0.13), Yamabuki (0.13), Komorebi (0.13), Wakakusa (0.11)] who runs it
+  #2 87px solid  I fear that [Hotarubi (0.17), Sakurabi (0.17), Tasogare (0.11), Kasasagi (0.08), Akatsuki (0.08)] St
+  #3 82px solid  Now Murasame said [Shirotae (0.28), Koromo (0.28), Kodama (0.19), Minamo (0.19), Inazuma (0.03)] as a tall
+  #4 81px solid   [Koromo (0.39), Shirotae (0.39), Kodama (0.07), Minamo (0.07), Kurenai (0.06)] drove in silence
+  #5 75px solid  we get to [Utakata (0.10), Kasumi (0.09), Mizuho (0.09), Shigure (0.09), Yukima (0.09)] 
+5 box(es); guesses -> names.guess.json, picture -> names.guess.png
+
+$ ./unredact.sh score names.guess.json names.key.json
+  found  rank  7  Hiyodori
+  found  rank  7  Hoshizora
+  found  rank  2  Kasumi.
+  found  rank  3  Kodama,
+  found  rank  3  Kodama
+5 boxes: 5 found, first guess right 0, in top five 3, 0 false box(es)

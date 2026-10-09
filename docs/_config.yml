@@ -1,0 +1,11 @@
+# GitHub Pages (Jekyll). Settings -> Pages -> Deploy from branch: main, folder /docs
+title: "nsx26 · Black Mirror"
+description: "Redact a page image properly, then measure how much a solid box still gives away."
+url: "https://magneato.github.io"
+baseurl: "/nsx26"
+lang: en
+exclude:
+  - "*.key.json"
+  - "*.layout.json"
+include:
+  - demo

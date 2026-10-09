@@ -1,0 +1,198 @@
+{
+  "nsx26": "0.1.0",
+  "codename": "Black Mirror",
+  "command": "unredact.sh evaluate ",
+  "pages": 24,
+  "targets_per_page": 6,
+  "seed": 2026,
+  "fonts": [
+    "LiberationSerif-Regular",
+    "LiberationSans-Regular",
+    "DejaVuSerif"
+  ],
+  "sizes_px": [
+    20,
+    22,
+    24,
+    26
+  ],
+  "test_books": [
+    "The Adventures of Sherlock Holmes (Arthur Conan Doyle, Gutenberg 1661)",
+    "The Great Gatsby (F. Scott Fitzgerald, Gutenberg 64317)"
+  ],
+  "model": {
+    "sha256": "f3373479af5d7157e301819f54191715ebb2fe2a9687d7215655668a006503f2",
+    "words": 3544215,
+    "vocabulary": 34499,
+    "source": "corpus/books.tsv train split: 1342, 158, 84, 98, 1400, 2701, 345, 768, 1260, 145, 174, 76, 205, 3300, 1232, 2600, 1184, 36, 35"
+  },
+  "corpus_sha256_16": {
+    "1342": "3f6bb9d6f78e0293",
+    "158": "532b122b4e6a76cc",
+    "84": "7810cd483cffcf2c",
+    "98": "d54c2b80d40a40b9",
+    "1400": "9a637118af8e953e",
+    "2701": "b5e88b71a1cda068",
+    "345": "96cd16eacdbfebae",
+    "768": "e533fe750589f042",
+    "1260": "13414dee2951c3ee",
+    "145": "dc2e0107e6ae07e8",
+    "174": "38f36b510417177a",
+    "76": "d617a37aa7ae1e1a",
+    "205": "2d9a76a2e3e8195c",
+    "3300": "e91d52dca43fd0fd",
+    "1232": "33496a305f7a4b93",
+    "2600": "2d5bb2ad5f422765",
+    "1184": "64f8d5cfa51fcecb",
+    "36": "8417469e3ab66474",
+    "35": "2892e919000e17c8",
+    "1661": "922e2a12ccb43a4c",
+    "64317": "ce760ec377accd35"
+  },
+  "settings": {
+    "tol_px": 1.0,
+    "pad_max_px": 2.0,
+    "sigma_px": 1.0,
+    "max_words": 2
+  },
+  "tools": {
+    "python": "3.14.4",
+    "numpy": "2.5.3",
+    "pillow": "12.3.0",
+    "tesseract": "tesseract 5.5.0",
+    "platform": "Linux-6.17.0-40-generic-x86_64-with-glibc2.43"
+  },
+  "minutes": 18.7,
+  "summary": {
+    "black": {
+      "what": "solid box over the ink of one word",
+      "boxes": 144,
+      "found": 1.0,
+      "top1": 0.4653,
+      "top5": 0.6944,
+      "in_vocabulary": 0.9653,
+      "top1_if_in_vocabulary": 0.482,
+      "median_texts_that_fit": 3661.5,
+      "mean_belief_of_first_guess": 0.5883,
+      "false_boxes": 0,
+      "seconds_per_page": 4.37
+    },
+    "noise": {
+      "what": "the same boxes filled with random static",
+      "boxes": 144,
+      "found": 0.9792,
+      "top1": 0.4514,
+      "top5": 0.6806,
+      "in_vocabulary": 0.9653,
+      "top1_if_in_vocabulary": 0.4676,
+      "median_texts_that_fit": 3807.0,
+      "mean_belief_of_first_guess": 0.5801,
+      "false_boxes": 0,
+      "seconds_per_page": 3.49
+    },
+    "scan": {
+      "what": "solid box, then printed and scanned (blur, grain, JPEG q75)",
+      "boxes": 144,
+      "found": 1.0,
+      "top1": 0.4583,
+      "top5": 0.6736,
+      "in_vocabulary": 0.9653,
+      "top1_if_in_vocabulary": 0.4748,
+      "median_texts_that_fit": 3633.5,
+      "mean_belief_of_first_guess": 0.5848,
+      "false_boxes": 0,
+      "seconds_per_page": 3.82
+    },
+    "width-only": {
+      "what": "solid box, attacker ignores the words around it",
+      "boxes": 144,
+      "found": 1.0,
+      "top1": 0.1944,
+      "top5": 0.3819,
+      "in_vocabulary": 0.9653,
+      "top1_if_in_vocabulary": 0.2014,
+      "median_texts_that_fit": 5897.0,
+      "mean_belief_of_first_guess": 0.2891,
+      "false_boxes": 0,
+      "seconds_per_page": 1.12
+    },
+    "pairs": {
+      "what": "one box over two consecutive words",
+      "boxes": 144,
+      "found": 1.0,
+      "top1": 0.1458,
+      "top5": 0.3056,
+      "in_vocabulary": 0.9583,
+      "top1_if_in_vocabulary": 0.1522,
+      "median_texts_that_fit": 190420.0,
+      "mean_belief_of_first_guess": 0.3027,
+      "false_boxes": 0,
+      "seconds_per_page": 8.26
+    },
+    "pad3": {
+      "what": "box 3 px wider than the ink each side; attacker assumes up to 2",
+      "boxes": 144,
+      "found": 1.0,
+      "top1": 0.0,
+      "top5": 0.0,
+      "in_vocabulary": 0.9653,
+      "top1_if_in_vocabulary": 0.0,
+      "median_texts_that_fit": 6531.0,
+      "mean_belief_of_first_guess": 0.3935,
+      "false_boxes": 0,
+      "seconds_per_page": 3.71
+    },
+    "pad3-known": {
+      "what": "same boxes; attacker knows the padding is up to 3",
+      "boxes": 144,
+      "found": 1.0,
+      "top1": 0.0625,
+      "top5": 0.1111,
+      "in_vocabulary": 0.9653,
+      "top1_if_in_vocabulary": 0.0647,
+      "median_texts_that_fit": 7689.0,
+      "mean_belief_of_first_guess": 0.4179,
+      "false_boxes": 0,
+      "seconds_per_page": 1.65
+    },
+    "names": {
+      "what": "solid box over a proper name; attacker knows it is one of 90 listed names",
+      "boxes": 133,
+      "found": 1.0,
+      "top1": 0.2481,
+      "top5": 0.8947,
+      "in_vocabulary": 0.0,
+      "top1_if_in_vocabulary": 0.0,
+      "median_texts_that_fit": 10.0,
+      "mean_belief_of_first_guess": 0.2595,
+      "false_boxes": 0,
+      "seconds_per_page": 3.26
+    },
+    "names-mixed": {
+      "what": "same boxes; the 90 names are only added to the vocabulary",
+      "boxes": 133,
+      "found": 1.0,
+      "top1": 0.0,
+      "top5": 0.0526,
+      "in_vocabulary": 0.0,
+      "top1_if_in_vocabulary": 0.0,
+      "median_texts_that_fit": 119458.0,
+      "mean_belief_of_first_guess": 0.2393,
+      "false_boxes": 0,
+      "seconds_per_page": 3.63
+    },
+    "uniform": {
+      "what": "the defence: every box 160 px wide (multiples of 160 if longer)",
+      "boxes": 144,
+      "found": 1.0,
+      "top1": 0.0,
+      "top5": 0.0,
+      "in_vocabulary": 0.9653,
+      "top1_if_in_vocabulary": 0.0,
+      "median_texts_that_fit": 359129.0,
+      "mean_belief_of_first_guess": 0.1692,
+      "false_boxes": 0,
+      "seconds_per_page": 11.36
+    }
+  }
+}

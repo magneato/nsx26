@@ -1,0 +1,399 @@
+{
+  "tool": "nsx26 unredact 0.1.0",
+  "codename": "Black Mirror",
+  "size": [
+    1275,
+    1650
+  ],
+  "font": {
+    "font": "LiberationSerif-Regular",
+    "size_px": 23.891,
+    "ocr_offset_px": -0.985,
+    "median_residual_px": 0.513,
+    "words_used": 457,
+    "ranking": [
+      {
+        "font": "LiberationSerif-Regular",
+        "size_px": 23.89,
+        "median_residual_px": 0.513
+      },
+      {
+        "font": "FreeSerif",
+        "size_px": 24.54,
+        "median_residual_px": 0.732
+      },
+      {
+        "font": "DejaVuSerif",
+        "size_px": 18.71,
+        "median_residual_px": 1.111
+      },
+      {
+        "font": "DejaVuSans",
+        "size_px": 19.05,
+        "median_residual_px": 1.455
+      },
+      {
+        "font": "FreeSans",
+        "size_px": 21.89,
+        "median_residual_px": 1.531
+      }
+    ]
+  },
+  "boxes": [
+    {
+      "x": 960,
+      "y": 246,
+      "w": 99,
+      "h": 28,
+      "fill": "solid",
+      "left": [
+        "and",
+        "the",
+        "rascally"
+      ],
+      "right": [
+        "who",
+        "runs",
+        "it"
+      ],
+      "starts_sentence": false,
+      "texts_that_fit": 11,
+      "guesses": [
+        {
+          "text": "Michishio",
+          "score": -26.517,
+          "p_model": 0.1329,
+          "ink_px": 96.9
+        },
+        {
+          "text": "Yamabiko",
+          "score": -26.518,
+          "p_model": 0.1327,
+          "ink_px": 97.12
+        },
+        {
+          "text": "Yamabuki",
+          "score": -26.518,
+          "p_model": 0.1327,
+          "ink_px": 97.12
+        },
+        {
+          "text": "Komorebi",
+          "score": -26.519,
+          "p_model": 0.1326,
+          "ink_px": 96.88
+        },
+        {
+          "text": "Wakakusa",
+          "score": -26.674,
+          "p_model": 0.1135,
+          "ink_px": 97.57
+        },
+        {
+          "text": "Tsukikage",
+          "score": -26.879,
+          "p_model": 0.0925,
+          "ink_px": 97.86
+        },
+        {
+          "text": "Hoshizora",
+          "score": -27.221,
+          "p_model": 0.0657,
+          "ink_px": 98.19
+        },
+        {
+          "text": "Kogarashi",
+          "score": -27.221,
+          "p_model": 0.0657,
+          "ink_px": 98.19
+        },
+        {
+          "text": "Shiranami",
+          "score": -27.221,
+          "p_model": 0.0657,
+          "ink_px": 98.19
+        },
+        {
+          "text": "Hatsuyuki",
+          "score": -27.25,
+          "p_model": 0.0638,
+          "ink_px": 98.22
+        }
+      ]
+    },
+    {
+      "x": 1011,
+      "y": 438,
+      "w": 87,
+      "h": 28,
+      "fill": "solid",
+      "left": [
+        "I",
+        "fear",
+        "that"
+      ],
+      "right": [
+        "St"
+      ],
+      "starts_sentence": false,
+      "texts_that_fit": 16,
+      "guesses": [
+        {
+          "text": "Hotarubi",
+          "score": -20.962,
+          "p_model": 0.1688,
+          "ink_px": 84.93
+        },
+        {
+          "text": "Sakurabi",
+          "score": -20.962,
+          "p_model": 0.1688,
+          "ink_px": 84.93
+        },
+        {
+          "text": "Tasogare",
+          "score": -21.353,
+          "p_model": 0.1141,
+          "ink_px": 85.89
+        },
+        {
+          "text": "Kasasagi",
+          "score": -21.736,
+          "p_model": 0.0779,
+          "ink_px": 86.25
+        },
+        {
+          "text": "Akatsuki",
+          "score": -21.766,
+          "p_model": 0.0755,
+          "ink_px": 86.27
+        },
+        {
+          "text": "Fujinami",
+          "score": -21.766,
+          "p_model": 0.0755,
+          "ink_px": 86.27
+        },
+        {
+          "text": "Hiyodori",
+          "score": -21.766,
+          "p_model": 0.0755,
+          "ink_px": 86.27
+        },
+        {
+          "text": "Usuzumi",
+          "score": -21.766,
+          "p_model": 0.0755,
+          "ink_px": 86.27
+        },
+        {
+          "text": "Shimoyo",
+          "score": -21.796,
+          "p_model": 0.0733,
+          "ink_px": 86.29
+        },
+        {
+          "text": "Kagaribi",
+          "score": -21.948,
+          "p_model": 0.063,
+          "ink_px": 83.59
+        }
+      ]
+    },
+    {
+      "x": 376,
+      "y": 591,
+      "w": 82,
+      "h": 36,
+      "fill": "solid",
+      "left": [
+        "Now",
+        "Murasame",
+        "said"
+      ],
+      "right": [
+        "as",
+        "a",
+        "tall"
+      ],
+      "starts_sentence": false,
+      "texts_that_fit": 6,
+      "guesses": [
+        {
+          "text": "Shirotae",
+          "score": -19.9,
+          "p_model": 0.2831,
+          "ink_px": 79.63
+        },
+        {
+          "text": "Koromo",
+          "score": -19.9,
+          "p_model": 0.2831,
+          "ink_px": 79.63
+        },
+        {
+          "text": "Kodama",
+          "score": -20.275,
+          "p_model": 0.1946,
+          "ink_px": 80.94
+        },
+        {
+          "text": "Minamo",
+          "score": -20.298,
+          "p_model": 0.1902,
+          "ink_px": 80.97
+        },
+        {
+          "text": "Inazuma",
+          "score": -22.323,
+          "p_model": 0.0251,
+          "ink_px": 82.23
+        },
+        {
+          "text": "Kagerou",
+          "score": -22.376,
+          "p_model": 0.0238,
+          "ink_px": 82.26
+        }
+      ]
+    },
+    {
+      "x": 731,
+      "y": 979,
+      "w": 81,
+      "h": 28,
+      "fill": "solid",
+      "left": [],
+      "right": [
+        "drove",
+        "in",
+        "silence"
+      ],
+      "starts_sentence": true,
+      "texts_that_fit": 6,
+      "guesses": [
+        {
+          "text": "Koromo",
+          "score": -28.281,
+          "p_model": 0.3929,
+          "ink_px": 79.63
+        },
+        {
+          "text": "Shirotae",
+          "score": -28.281,
+          "p_model": 0.3929,
+          "ink_px": 79.63
+        },
+        {
+          "text": "Kodama",
+          "score": -29.969,
+          "p_model": 0.0726,
+          "ink_px": 80.94
+        },
+        {
+          "text": "Minamo",
+          "score": -30.016,
+          "p_model": 0.0693,
+          "ink_px": 80.97
+        },
+        {
+          "text": "Kurenai",
+          "score": -30.18,
+          "p_model": 0.0588,
+          "ink_px": 76.95
+        },
+        {
+          "text": "Wakaba",
+          "score": -31.645,
+          "p_model": 0.0136,
+          "ink_px": 76.33
+        }
+      ]
+    },
+    {
+      "x": 816,
+      "y": 1363,
+      "w": 75,
+      "h": 28,
+      "fill": "solid",
+      "left": [
+        "we",
+        "get",
+        "to"
+      ],
+      "right": [],
+      "starts_sentence": false,
+      "texts_that_fit": 15,
+      "guesses": [
+        {
+          "text": "Utakata",
+          "score": -10.785,
+          "p_model": 0.1003,
+          "ink_px": 74.28
+        },
+        {
+          "text": "Kasumi",
+          "score": -10.847,
+          "p_model": 0.0942,
+          "ink_px": 74.32
+        },
+        {
+          "text": "Mizuho",
+          "score": -10.847,
+          "p_model": 0.0942,
+          "ink_px": 74.32
+        },
+        {
+          "text": "Shigure",
+          "score": -10.847,
+          "p_model": 0.0942,
+          "ink_px": 74.32
+        },
+        {
+          "text": "Yukima",
+          "score": -10.847,
+          "p_model": 0.0942,
+          "ink_px": 74.32
+        },
+        {
+          "text": "Kikyou",
+          "score": -10.851,
+          "p_model": 0.0939,
+          "ink_px": 71.67
+        },
+        {
+          "text": "Momiji",
+          "score": -10.851,
+          "p_model": 0.0939,
+          "ink_px": 71.67
+        },
+        {
+          "text": "Asagao",
+          "score": -10.883,
+          "p_model": 0.0909,
+          "ink_px": 71.65
+        },
+        {
+          "text": "Hakuro",
+          "score": -10.883,
+          "p_model": 0.0909,
+          "ink_px": 71.65
+        },
+        {
+          "text": "Yoizuki",
+          "score": -11.229,
+          "p_model": 0.0643,
+          "ink_px": 74.59
+        }
+      ]
+    }
+  ],
+  "note": "Ranked GUESSES. A box keeps its width, not its text; the right answer may be ranked low or be missing from the vocabulary.",
+  "seconds": 10.399,
+  "image": "names.png",
+  "model": {
+    "file": "wordmodel.npz",
+    "sha256": "f3373479af5d7157e301819f54191715ebb2fe2a9687d7215655668a006503f2",
+    "source": "corpus/books.tsv train split: 1342, 158, 84, 98, 1400, 2701, 345, 768, 1260, 145, 174, 76, 205, 3300, 1232, 2600, 1184, 36, 35"
+  }
+}

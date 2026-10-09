@@ -1,0 +1,26 @@
+# Project Gutenberg books used as the reference corpus (public domain in the USA).
+# They are downloaded by setup.sh, never committed. The split is by AUTHOR: no
+# author of a "test" book wrote any "train" book, so the evaluation pages come
+# from prose the word model has never seen, in a voice it has never seen.
+# id	split	author	title
+1342	train	Jane Austen	Pride and Prejudice
+158	train	Jane Austen	Emma
+84	train	Mary Shelley	Frankenstein
+98	train	Charles Dickens	A Tale of Two Cities
+1400	train	Charles Dickens	Great Expectations
+2701	train	Herman Melville	Moby Dick
+345	train	Bram Stoker	Dracula
+768	train	Emily Bronte	Wuthering Heights
+1260	train	Charlotte Bronte	Jane Eyre
+145	train	George Eliot	Middlemarch
+174	train	Oscar Wilde	The Picture of Dorian Gray
+76	train	Mark Twain	Adventures of Huckleberry Finn
+205	train	Henry David Thoreau	Walden
+3300	train	Adam Smith	The Wealth of Nations
+1232	train	Niccolo Machiavelli	The Prince
+2600	train	Leo Tolstoy	War and Peace
+1184	train	Alexandre Dumas	The Count of Monte Cristo
+36	train	H. G. Wells	The War of the Worlds
+35	train	H. G. Wells	The Time Machine
+1661	test	Arthur Conan Doyle	The Adventures of Sherlock Holmes
+64317	test	F. Scott Fitzgerald	The Great Gatsby

@@ -1,0 +1,219 @@
+---
+layout: null
+title: nsx26 · Black Mirror
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nsx26 · Black Mirror v0.1.0</title>
+<meta name="description" content="Redact a page image properly, then measure how much a solid box still gives away. Ranked guesses, not recovery, measured on prose the model has never seen.">
+<meta property="og:title" content="nsx26 · Black Mirror v0.1.0">
+<meta property="og:description" content="A box hides the pixels, not its width. redact.sh + unredact.sh, measured end to end.">
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/img/social-preview.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root {
+  --bg: #04060a; --panel: #0a0f16; --line: #1b2633; --ink: #e8f4ff; --dim: #8aa0b4;
+  --cyan: #59f2ff; --green: #73ffb3; --amber: #ffb841; --magenta: #ff59cc;
+  --glow: 0 0 6px rgba(89, 242, 255, .55), 0 0 18px rgba(89, 242, 255, .25);
+  --mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", "DejaVu Sans Mono", Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { margin: 0; background: radial-gradient(ellipse at 50% 0%, #0b1420 0%, var(--bg) 60%) fixed;
+  color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--cyan); text-decoration: none; } a:hover { text-shadow: var(--glow); }
+main { max-width: 1080px; margin: 0 auto; padding: 0 16px 64px; }
+header.hero { padding: 28px 0 8px; }
+header.hero img { width: 100%; height: auto; display: block; }
+.lede { font-size: 1.15rem; max-width: 760px; color: var(--ink); }
+.lede b { color: var(--amber); font-weight: 600; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 8px; }
+.cta a { font-family: var(--mono); border: 1px solid var(--cyan); padding: 8px 14px; border-radius: 2px; }
+.cta a.alt { border-color: var(--line); color: var(--dim); }
+h2 { font-family: var(--mono); font-weight: 500; letter-spacing: .14em; text-transform: uppercase; font-size: 1rem;
+  color: var(--cyan); text-shadow: var(--glow); border-top: 1px solid var(--line); padding-top: 28px; margin-top: 48px; }
+h2 span { color: var(--dim); text-shadow: none; }
+p, li { color: #cfdeeb; }
+code, pre { font-family: var(--mono); font-size: .9em; }
+pre { background: var(--panel); border: 1px solid var(--line); padding: 14px 16px; overflow-x: auto; color: var(--green); }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-family: var(--mono); font-weight: 500; color: var(--dim); font-size: .8rem; letter-spacing: .06em; }
+td.n { text-align: right; font-family: var(--mono); white-space: nowrap; }
+tbody th code { color: var(--amber); }
+.bar { display: inline-block; height: 8px; width: calc(var(--w) * .6); max-width: 60px; margin-right: 8px;
+  background: var(--green); box-shadow: 0 0 8px rgba(115, 255, 179, .6); vertical-align: middle; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+figure { margin: 0; background: var(--panel); border: 1px solid var(--line); }
+figure img { width: 100%; height: auto; display: block; }
+figcaption { padding: 10px 12px; font-size: .88rem; color: var(--dim); }
+.steps { counter-reset: s; list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.steps li { background: var(--panel); border: 1px solid var(--line); padding: 14px 16px; }
+.steps li::before { counter-increment: s; content: "0" counter(s); font-family: var(--mono); color: var(--magenta);
+  display: block; margin-bottom: 6px; }
+.note { border-left: 2px solid var(--amber); padding: 4px 14px; color: #cfdeeb; }
+.what-m { display: none; }
+@media (max-width: 640px) {
+  .what { display: none; }
+  .what-m { display: block; font-size: .82rem; color: var(--dim); font-weight: 400; margin-top: 4px; }
+  th, td { padding: 8px 6px; }
+  .bar { display: none; }
+}
+footer { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 18px; color: var(--dim); font-size: .85rem; }
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+  <img src="img/hero.svg" alt="NSX26 Black Mirror: a redacted page, the box's width, and the ranked guesses that fit it" width="1280" height="640">
+  <p class="lede">A flattened redaction box destroys the pixels under it, but <b>not its own width</b>. In a known font,
+  only some words are that wide; the words around the box say which of those fit. <code>nsx26</code> redacts page images
+  properly, then measures, on prose the model has never seen, how often that is enough to guess what was hidden.</p>
+  <div class="cta">
+    <a href="https://github.com/magneato/nsx26">github.com/magneato/nsx26</a>
+    <a href="https://github.com/magneato/nsx26/releases/tag/v0.1.0">v0.1.0 Black Mirror</a>
+    <a class="alt" href="#results">results</a>
+    <a class="alt" href="#defend">how to defend</a>
+  </div>
+</header>
+
+<h2 id="results">Measured <span>// 144 boxes per condition, held-out authors</span></h2>
+<p>Every row runs the shipped <code>redact</code> on a page, writes the PNG, and gives <code>unredact</code> that file and
+nothing else. Words are chosen uniformly at random, of any length, known to the model or not.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>condition</th><th class="what">what the redactor did / what the attacker knows</th><th>found</th><th>first guess right</th><th>top&nbsp;5</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code>black</code><span class="what-m">solid box over the ink of one word</span></th><td class="what">solid box over the ink of one word</td><td class="n">100%</td><td class="n"><span class="bar" style="--w:47%"></span><b>47%</b></td><td class="n">69%</td></tr>
+<tr><th scope="row"><code>noise</code><span class="what-m">the same boxes filled with random static</span></th><td class="what">the same boxes filled with random static</td><td class="n">98%</td><td class="n"><span class="bar" style="--w:45%"></span><b>45%</b></td><td class="n">68%</td></tr>
+<tr><th scope="row"><code>scan</code><span class="what-m">solid box, then printed and scanned (blur, grain, JPEG q75)</span></th><td class="what">solid box, then printed and scanned (blur, grain, JPEG q75)</td><td class="n">100%</td><td class="n"><span class="bar" style="--w:46%"></span><b>46%</b></td><td class="n">67%</td></tr>
+<tr><th scope="row"><code>width-only</code><span class="what-m">solid box, attacker ignores the words around it</span></th><td class="what">solid box, attacker ignores the words around it</td><td class="n">100%</td><td class="n"><span class="bar" style="--w:19%"></span><b>19%</b></td><td class="n">38%</td></tr>
+<tr><th scope="row"><code>pairs</code><span class="what-m">one box over two consecutive words</span></th><td class="what">one box over two consecutive words</td><td class="n">100%</td><td class="n"><span class="bar" style="--w:15%"></span><b>15%</b></td><td class="n">31%</td></tr>
+<tr><th scope="row"><code>names</code><span class="what-m">solid box over a proper name; attacker knows it is one of 90 listed names</span></th><td class="what">solid box over a proper name; attacker knows it is one of 90 listed names</td><td class="n">100%</td><td class="n"><span class="bar" style="--w:25%"></span><b>25%</b></td><td class="n">89%</td></tr>
+<tr><th scope="row"><code>names-mixed</code><span class="what-m">same boxes; the 90 names are only added to the vocabulary</span></th><td class="what">same boxes; the 90 names are only added to the vocabulary</td><td class="n">100%</td><td class="n"><span class="bar" style="--w:1%"></span><b>0%</b></td><td class="n">5%</td></tr>
+<tr><th scope="row"><code>pad3</code><span class="what-m">box 3 px wider than the ink each side; attacker assumes up to 2</span></th><td class="what">box 3 px wider than the ink each side; attacker assumes up to 2</td><td class="n">100%</td><td class="n"><span class="bar" style="--w:1%"></span><b>0%</b></td><td class="n">0%</td></tr>
+<tr><th scope="row"><code>pad3-known</code><span class="what-m">same boxes; attacker knows the padding is up to 3</span></th><td class="what">same boxes; attacker knows the padding is up to 3</td><td class="n">100%</td><td class="n"><span class="bar" style="--w:6%"></span><b>6%</b></td><td class="n">11%</td></tr>
+<tr><th scope="row"><code>uniform</code><span class="what-m">the defence: every box 160 px wide (multiples of 160 if longer)</span></th><td class="what">the defence: every box 160 px wide (multiples of 160 if longer)</td><td class="n">100%</td><td class="n"><span class="bar" style="--w:1%"></span><b>0%</b></td><td class="n">0%</td></tr>
+</tbody></table></div>
+<p class="note">The model is overconfident: its average belief in its first guess was 0.59, its accuracy 0.47.
+Treat its numbers as rankings, not probabilities. Reproduce with <code>./unredact.sh evaluate</code>
+(seed 2026, 18.7 min); every case is in <code>results/cases.json</code>.</p>
+
+<ul>
+<li>Width alone leaves a median of 3,662 texts (one or two words) that fit a box; with the words around it the first guess is right 47% of the time, against 19% from width alone.</li>
+<li>Random static instead of black: 45%. The box keeps its width either way.</li>
+<li>Printed and scanned (simulated): 46%.</li>
+<li>Two words under one box: 15%.</li>
+<li>Names: with the 90 stand-in names merely added to the vocabulary, the first guess is right 0% of the time; an attacker who knows the box holds one of those 90 puts the right one first 25% of the time and in the top five 89%.</li>
+<li>Boxes 3 px wider than the ink on each side: 0% for an attacker who assumes tight boxes, 6% for one who knows the padding (the wider width window admits more candidates).</li>
+<li>Every box 160 px wide: <b>0%</b>.</li>
+</ul>
+
+<h2>One page <span>// the tools' own output, unedited</span></h2>
+<div class="grid">
+  <figure><a href="demo/words.png"><img src="demo/words-crop.png" alt="Detail: words covered by black boxes" loading="lazy"></a>
+    <figcaption>Detail of <code>redact.sh</code>'s output, actual pixels (click for the page).</figcaption></figure>
+  <figure><a href="demo/words.guess.png"><img src="demo/words.guess-crop.png" alt="Detail: the same boxes with unredact's first guesses" loading="lazy"></a>
+    <figcaption>The same detail of <code>unredact.sh</code>'s picture: first guess and belief per box.</figcaption></figure>
+  <figure><a href="demo/names.guess.png"><img src="demo/names.guess-crop.png" alt="Detail: redacted names with guesses from the list" loading="lazy"></a>
+    <figcaption>Names, attacker holding the 90-name list: detail.</figcaption></figure>
+</div>
+<div class="grid" style="margin-top:16px">
+  <figure><img src="demo/words.png" alt="A page of prose with five words covered by black boxes" loading="lazy">
+    <figcaption><code>redact.sh</code>: five words, solid boxes over their ink, flattened.</figcaption></figure>
+  <figure><img src="demo/words.guess.png" alt="The same page with each box showing unredact's first guess in green" loading="lazy">
+    <figcaption><code>unredact.sh</code>: each box shows its first guess and the model's belief. On this page: 5 of 5 boxes found, first guess right 0, right answer in the top five 0.</figcaption></figure>
+  <figure><img src="demo/names.guess.png" alt="The page with proper names redacted and guessed from a list" loading="lazy">
+    <figcaption>Names, with the attacker holding a list of 90 that contains them. On this page: 5 of 5 boxes found, first guess right 0, right answer in the top five 3.</figcaption></figure>
+</div>
+<pre>$ ./redact.sh sample page.png --book 1661 --seed 3 --names names.txt
+page.png: 616 words of The Adventures of Sherlock Holmes in LiberationSerif-Regular 24px (layout: page.layout.json)
+
+$ ./redact.sh page.png -o words.png --term talk --term dear --term side --term death --term meets --key words.key.json
+words.png: 5 box(es), fill black, sha256 cc514749750df248
+
+$ ./unredact.sh words.png
+font LiberationSerif-Regular 23.89px (median residual 0.50px over 457 words)
+  #1 52px solid  been done to [merit (0.13), them (0.12), place (0.06), serve (0.05), assist (0.05)] in that den
+  #2 37px solid  light from its [two (0.74), odd (0.03), cell (0.03), cart (0.02), aim (0.02)] lanterns
+  #3 36px solid  have someone to [call (0.61), fire (0.16), pay (0.03), rise (0.03), add (0.03)] to for my
+  #4 41px solid  say to this [new (0.16), be a (0.14), here (0.11), said (0.07), was (0.06)] little woman to-night
+  #5 55px solid  to-night when she [heard (0.45), loved (0.16), woke (0.12), asked (0.10), made (0.07)] me at the
+5 box(es); guesses -&gt; words.guess.json, picture -&gt; words.guess.png
+
+$ ./unredact.sh score words.guess.json words.key.json
+  found  rank  6  talk
+  found  rank  -  dear
+  found  rank  -  side
+  found  rank  -  death
+  found  rank  9  meets
+5 boxes: 5 found, first guess right 0, in top five 0, 0 false box(es)
+
+$ ./redact.sh page.png -o names.png --term Hiyodori --term Hoshizora --term Kasumi --term Kodama --key names.key.json
+names.png: 5 box(es), fill black, sha256 05c4914a58cb6ce4
+
+$ ./unredact.sh names.png --names names.txt --names-only
+font LiberationSerif-Regular 23.89px (median residual 0.51px over 457 words)
+  #1 99px solid  and the rascally [Michishio (0.13), Yamabiko (0.13), Yamabuki (0.13), Komorebi (0.13), Wakakusa (0.11)] who runs it
+  #2 87px solid  I fear that [Hotarubi (0.17), Sakurabi (0.17), Tasogare (0.11), Kasasagi (0.08), Akatsuki (0.08)] St
+  #3 82px solid  Now Murasame said [Shirotae (0.28), Koromo (0.28), Kodama (0.19), Minamo (0.19), Inazuma (0.03)] as a tall
+  #4 81px solid   [Koromo (0.39), Shirotae (0.39), Kodama (0.07), Minamo (0.07), Kurenai (0.06)] drove in silence
+  #5 75px solid  we get to [Utakata (0.10), Kasumi (0.09), Mizuho (0.09), Shigure (0.09), Yukima (0.09)] 
+5 box(es); guesses -&gt; names.guess.json, picture -&gt; names.guess.png
+
+$ ./unredact.sh score names.guess.json names.key.json
+  found  rank  7  Hiyodori
+  found  rank  7  Hoshizora
+  found  rank  2  Kasumi.
+  found  rank  3  Kodama,
+  found  rank  3  Kodama
+5 boxes: 5 found, first guess right 0, in top five 3, 0 false box(es)</pre>
+
+<h2>How it works</h2>
+<ol class="steps">
+  <li><b>Find the boxes.</b> Solid dark rectangles, or rectangles of random static, located to the pixel.</li>
+  <li><b>Read the page.</b> <code>tesseract</code> reads the visible words; their widths fix the font and size by regression.</li>
+  <li><b>Width.</b> From a 34,499-word vocabulary, keep only texts whose ink is as wide as the box.</li>
+  <li><b>Context.</b> A trigram word model ranks those by the visible words before and after the box.</li>
+</ol>
+
+<h2 id="defend">How to defend</h2>
+<ul>
+  <li><b>Make every box the same width.</b> <code>redact.sh --uniform 160</code>: the <code>uniform</code> row above.</li>
+  <li><b>Remove the text, then reflow.</b> Redact the source document, not a picture of it, so nothing keeps its width.</li>
+  <li><b>Pad generously and unpredictably.</b> A known pad only widens the window (<code>pad3-known</code>).</li>
+  <li><b>Remember lists.</b> If an adversary can list the candidates, a name is far easier to guess than a word.</li>
+</ul>
+
+<h2>What it does not do</h2>
+<ul>
+  <li>It never recovers pixels. A flattened box has none; every output is a ranked guess, labelled as one.</li>
+  <li>It is measured on clean, single-column, left-aligned prose in three common fonts, plus one simulated print-and-scan.
+  Justified text, other fonts, real scans and real documents are not measured here; do not assume these numbers carry over.</li>
+  <li>Its word model is 19th- and early 20th-century English from Project Gutenberg. It knows that era's words, not yours.</li>
+  <li>It does not read PDFs. A PDF "redaction" that only draws a box over live text is a different, worse failure; rasterise and flatten.</li>
+</ul>
+<p class="note">Use it to audit your own redactions, or on documents you are entitled to examine.</p>
+
+<h2>Run it</h2>
+<pre>git clone https://github.com/magneato/nsx26 &amp;&amp; cd nsx26
+./setup.sh                      # Ubuntu 24.04 / 26.04  (Windows 11: powershell -ExecutionPolicy Bypass -File .\setup.ps1)
+./redact.sh sample page.png --book 1661 --seed 3
+./redact.sh page.png -o red.png --term talk --term dear --key red.key.json
+./unredact.sh red.png           # -> red.guess.json, red.guess.png
+./unredact.sh score red.guess.json red.key.json
+./unredact.sh evaluate          # the table above</pre>
+
+<footer>
+  nsx26 v0.1.0 “Black Mirror” · MIT licence · © 2026 Neural Splines LLC ·
+  corpus: public-domain books from <a href="https://www.gutenberg.org/">Project Gutenberg</a>, downloaded at setup, not redistributed ·
+  stand-in names: classical Japanese words for weather, seasons and birds.
+</footer>
+</main>
+</body>
+</html>

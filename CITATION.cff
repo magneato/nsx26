@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use nsx26 or its measurements, please cite it."
+title: "nsx26: Black Mirror. Measuring what a redaction box gives away"
+version: 0.1.0
+date-released: 2026-10-09
+license: MIT
+repository-code: "https://github.com/magneato/nsx26"
+url: "https://magneato.github.io/nsx26/"
+authors:
+  - name: "Neural Splines LLC"

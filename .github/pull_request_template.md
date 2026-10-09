@@ -1,0 +1,3 @@
+- [ ] `python -m unittest discover -s tests` passes
+- [ ] if behaviour or accuracy changed: re-ran `./unredact.sh evaluate` and `python tools/build_site.py`, and committed `results/results.json`
+- [ ] docs claim nothing the measurements do not show

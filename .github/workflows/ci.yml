@@ -1,0 +1,76 @@
+name: ci
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, ubuntu-latest, windows-latest]
+        python: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: tesseract and fonts (Ubuntu)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-eng fonts-liberation fonts-dejavu-core fonts-dejavu-extra
+      - name: tesseract (Windows)
+        if: runner.os == 'Windows'
+        run: choco install tesseract --no-progress -y
+      - run: python -m pip install -r requirements.txt
+      - name: fonts the test pages are set in (downloaded only where missing)
+        run: python tools/fetch.py --fonts-only
+      - name: unit and end-to-end tests (the real redact/unredact wrappers)
+        run: python -m unittest discover -s tests -v
+
+  # The full setup scripts, as a user runs them (downloads the 21-book corpus, so not on every push).
+  setup:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/v')
+    name: setup on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: setup.sh
+        if: runner.os == 'Linux'
+        run: ./setup.sh
+      - name: setup.ps1 under PowerShell 7 (Linux)
+        if: runner.os == 'Linux'
+        shell: pwsh
+        run: ./setup.ps1 -NoWinget
+      - name: setup.ps1
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          choco install tesseract --no-progress -y
+          ./setup.ps1 -NoWinget
+      - name: demo page through both tools (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          ./redact.sh sample p.png --book 1661 --seed 3
+          ./redact.sh p.png -o r.png --term light --term said --key k.json
+          ./unredact.sh r.png && ./unredact.sh score r.guess.json k.json
+      - name: demo page through both tools (Windows)
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          call redact.cmd sample p.png --book 1661 --seed 3 || exit /b 1
+          call redact.cmd p.png -o r.png --term light --term said --key k.json || exit /b 1
+          call unredact.cmd r.png || exit /b 1
+          call unredact.cmd score r.guess.json k.json || exit /b 1
+      - name: evaluate (2 pages)
+        if: runner.os == 'Linux'
+        run: ./unredact.sh evaluate --pages 2 --out /tmp/ev
